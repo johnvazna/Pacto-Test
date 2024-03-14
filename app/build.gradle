@@ -36,10 +36,15 @@ android {
 
 dependencies {
     implementation project(":core")
+    implementation project(":data:users")
     implementation project(":common:network")
 
     //noinspection GradleDependency
     implementation "com.google.dagger:hilt-android:2.44"
     //noinspection GradleDependency
     annotationProcessor "com.google.dagger:hilt-compiler:2.44"
+
+    //RxJava
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
 }
