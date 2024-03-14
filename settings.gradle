@@ -15,3 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "PactoTest"
 include ':app'
+include ':core'
+include ':common'
+include ':domain'
+include ':data'
