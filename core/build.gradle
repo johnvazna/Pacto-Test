@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: '../config.gradle'
+
+android {
+    namespace 'com.johnvazna.core'
+    applyCommonBuildTypes(android)
+    applyAndroidCommonConfig(android, true)
+}
+
+dependencies {
+
+    //General
+    api 'androidx.appcompat:appcompat:1.6.1'
+    api 'com.google.android.material:material:1.11.0'
+}
