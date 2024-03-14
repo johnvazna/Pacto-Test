@@ -15,4 +15,8 @@ dependencies {
     //General
     api 'androidx.appcompat:appcompat:1.6.1'
     api 'com.google.android.material:material:1.11.0'
+
+    //RxJava
+    api 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    api 'io.reactivex.rxjava3:rxjava:3.1.5'
 }
