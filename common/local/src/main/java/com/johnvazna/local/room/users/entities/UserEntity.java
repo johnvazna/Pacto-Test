@@ -82,15 +82,7 @@ public class UserEntity {
         this.siteAdmin = siteAdmin;
     }
 
-    public int id() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String login() {
+    public String getLogin() {
         return login;
     }
 
@@ -98,7 +90,15 @@ public class UserEntity {
         this.login = login;
     }
 
-    public String nodeId() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNodeId() {
         return nodeId;
     }
 
@@ -106,7 +106,7 @@ public class UserEntity {
         this.nodeId = nodeId;
     }
 
-    public String avatarUrl() {
+    public String getAvatarUrl() {
         return avatarUrl;
     }
 
@@ -114,7 +114,7 @@ public class UserEntity {
         this.avatarUrl = avatarUrl;
     }
 
-    public String gravatarId() {
+    public String getGravatarId() {
         return gravatarId;
     }
 
@@ -122,7 +122,7 @@ public class UserEntity {
         this.gravatarId = gravatarId;
     }
 
-    public String url() {
+    public String getUrl() {
         return url;
     }
 
@@ -130,7 +130,7 @@ public class UserEntity {
         this.url = url;
     }
 
-    public String htmlUrl() {
+    public String getHtmlUrl() {
         return htmlUrl;
     }
 
@@ -138,7 +138,7 @@ public class UserEntity {
         this.htmlUrl = htmlUrl;
     }
 
-    public String followersUrl() {
+    public String getFollowersUrl() {
         return followersUrl;
     }
 
@@ -146,7 +146,7 @@ public class UserEntity {
         this.followersUrl = followersUrl;
     }
 
-    public String gistsUrl() {
+    public String getGistsUrl() {
         return gistsUrl;
     }
 
@@ -154,7 +154,7 @@ public class UserEntity {
         this.gistsUrl = gistsUrl;
     }
 
-    public String starredUrl() {
+    public String getStarredUrl() {
         return starredUrl;
     }
 
@@ -162,7 +162,7 @@ public class UserEntity {
         this.starredUrl = starredUrl;
     }
 
-    public String subscriptionsUrl() {
+    public String getSubscriptionsUrl() {
         return subscriptionsUrl;
     }
 
@@ -170,7 +170,7 @@ public class UserEntity {
         this.subscriptionsUrl = subscriptionsUrl;
     }
 
-    public String organizationsUrl() {
+    public String getOrganizationsUrl() {
         return organizationsUrl;
     }
 
@@ -178,7 +178,7 @@ public class UserEntity {
         this.organizationsUrl = organizationsUrl;
     }
 
-    public String reposUrl() {
+    public String getReposUrl() {
         return reposUrl;
     }
 
@@ -186,7 +186,7 @@ public class UserEntity {
         this.reposUrl = reposUrl;
     }
 
-    public String eventsUrl() {
+    public String getEventsUrl() {
         return eventsUrl;
     }
 
@@ -194,7 +194,7 @@ public class UserEntity {
         this.eventsUrl = eventsUrl;
     }
 
-    public String receivedEventsUrl() {
+    public String getReceivedEventsUrl() {
         return receivedEventsUrl;
     }
 
@@ -202,7 +202,7 @@ public class UserEntity {
         this.receivedEventsUrl = receivedEventsUrl;
     }
 
-    public String type() {
+    public String getType() {
         return type;
     }
 
@@ -210,7 +210,7 @@ public class UserEntity {
         this.type = type;
     }
 
-    public boolean siteAdmin() {
+    public boolean getSiteAdmin() {
         return siteAdmin;
     }
 
