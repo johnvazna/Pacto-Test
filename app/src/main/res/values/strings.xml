@@ -2,6 +2,14 @@
 
     <string name="app_name">PactoTest</string>
 
+    <!-- General values -->
+
+    <string name="general_accept">Accept</string>
+
+    <!-- General errors -->
+
+    <string name="error_message_generic">Oops! Sorry, it seems you have a network error. Try again</string>
+
     <!-- Custom empty list -->
 
     <string name="empty_list_connection">You still don\'t have enough accounts, have you checked your internet connection?</string>

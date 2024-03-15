@@ -4,7 +4,6 @@ import static com.johnvazna.pactotest.utils.Constants.USER_DETAIL;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +27,7 @@ public class UserFragment extends BaseFragment<UserViewModel> {
 
     private RecyclerView rvUsers;
 
+    private SearchView searchView;
 
     private LinearLayout emptyView;
 
@@ -60,8 +61,10 @@ public class UserFragment extends BaseFragment<UserViewModel> {
         rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
 
         emptyView = view.findViewById(R.id.emptyView);
+        searchView = view.findViewById(R.id.searchView);
         swipeRefresh = view.findViewById(R.id.swipeRefresh);
 
+        setupSearchView();
         setupRecyclerView();
         setupSwipeRefresh();
         observeUser();
@@ -77,20 +80,38 @@ public class UserFragment extends BaseFragment<UserViewModel> {
         swipeRefresh.setOnRefreshListener(this::onRefresh);
     }
 
+    private void setupSearchView() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                usersAdapter.filter(newText);
+                return true;
+            }
+        });
+    }
+
     private void observeUsers() {
         userViewModel.getUsersLiveData().observe(getViewLifecycleOwner(), result -> {
             if (result != null) {
                 if (result.isSuccess() && !result.getData().isEmpty()) {
                     usersAdapter.setUsers(result.getData());
+                    searchView.setVisibility(View.VISIBLE);
                     rvUsers.setVisibility(View.VISIBLE);
                     emptyView.setVisibility(View.GONE);
 
                 } else if (result.isSuccess() && result.getData().isEmpty()) {
                     rvUsers.setVisibility(View.GONE);
+                    searchView.setVisibility(View.GONE);
                     emptyView.setVisibility(View.VISIBLE);
 
                 } else if (result.isError()) {
                     rvUsers.setVisibility(View.GONE);
+                    searchView.setVisibility(View.GONE);
                     emptyView.setVisibility(View.VISIBLE);
                 }
 
@@ -108,7 +129,7 @@ public class UserFragment extends BaseFragment<UserViewModel> {
                     goToDetailUser(result.getData());
 
                 } else if (result.isError()) {
-                    Log.e("TAG", "Error to get username");
+                    showErrorDialog();
                 }
             }
         });
