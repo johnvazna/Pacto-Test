@@ -1,3 +1,9 @@
 <resources>
+
     <string name="app_name">PactoTest</string>
+
+    <!-- Custom empty list -->
+
+    <string name="empty_list_connection">You still don\'t have enough accounts, have you checked your internet connection?</string>
+
 </resources>
