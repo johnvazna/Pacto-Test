@@ -25,6 +25,16 @@
             </intent-filter>
         </activity>
 
+        <!-- Detail -->
+
+        <activity
+            android:name=".ui.users.view.UserDetailActivity"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
