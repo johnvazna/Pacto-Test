@@ -1,11 +1,14 @@
 package com.johnvazna.pactotest.ui.users.view;
 
+import static com.johnvazna.pactotest.utils.Constants.USER_DETAIL;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.johnvazna.domain.users.entities.UserDetail;
 import com.johnvazna.pactotest.R;
 import com.johnvazna.pactotest.bases.BaseFragment;
 import com.johnvazna.pactotest.ui.users.adapters.UsersAdapter;
@@ -22,6 +26,7 @@ import com.johnvazna.pactotest.ui.users.viewmodel.UserViewModel;
 public class UserFragment extends BaseFragment<UserViewModel> {
 
     private RecyclerView rvUsers;
+
 
     private LinearLayout emptyView;
 
@@ -59,14 +64,12 @@ public class UserFragment extends BaseFragment<UserViewModel> {
 
         setupRecyclerView();
         setupSwipeRefresh();
+        observeUser();
         observeUsers();
     }
 
     private void setupRecyclerView() {
-        usersAdapter = new UsersAdapter(user -> {
-            Toast.makeText(getContext(), user.getLogin(), Toast.LENGTH_SHORT).show();
-        });
-
+        usersAdapter = new UsersAdapter(user -> userViewModel.fetchUserByUsername(user.getLogin()));
         rvUsers.setAdapter(usersAdapter);
     }
 
@@ -96,6 +99,25 @@ public class UserFragment extends BaseFragment<UserViewModel> {
         });
 
         userViewModel.fetchUsers();
+    }
+
+    private void observeUser() {
+        userViewModel.getUserLiveData().observe(getViewLifecycleOwner(), result -> {
+            if (result != null) {
+                if (result.isSuccess()) {
+                    goToDetailUser(result.getData());
+
+                } else if (result.isError()) {
+                    Log.e("TAG", "Error to get username");
+                }
+            }
+        });
+    }
+
+    private void goToDetailUser(UserDetail userDetail) {
+        Intent intent = new Intent(getActivity(), UserDetailActivity.class);
+        intent.putExtra(USER_DETAIL, userDetail);
+        startActivity(intent);
     }
 
     private void onRefresh() {
