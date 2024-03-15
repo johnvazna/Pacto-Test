@@ -65,7 +65,6 @@ public class NetworkModule {
         return new ConnectivityInterceptor(connectivityService);
     }
 
-
     @Provides
     @Singleton
     public static Cache provideHttpCache(File cacheFile) {
