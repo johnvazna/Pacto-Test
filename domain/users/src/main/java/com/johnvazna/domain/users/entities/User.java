@@ -4,60 +4,60 @@ public class User {
 
     private String login;
     private int id;
-    private String node_id;
-    private String avatar_url;
-    private String gravatar_id;
+    private String nodeId;
+    private String avatarUrl;
+    private String gravatarId;
     private String url;
-    private String html_url;
-    private String followers_url;
-    private String gists_url;
-    private String starred_url;
-    private String subscriptions_url;
-    private String organizations_url;
-    private String repos_url;
-    private String events_url;
-    private String received_events_url;
+    private String htmlUrl;
+    private String followersUrl;
+    private String gistsUrl;
+    private String starredUrl;
+    private String subscriptionsUrl;
+    private String organizationsUrl;
+    private String reposUrl;
+    private String eventsUrl;
+    private String receivedEventsUrl;
     private String type;
-    private boolean site_admin;
+    private boolean siteAdmin;
 
     public User(
             String login,
             int id,
-            String node_id,
-            String avatar_url,
-            String gravatar_id,
+            String nodeId,
+            String avatarUrl,
+            String gravatarId,
             String url,
-            String html_url,
-            String followers_url,
-            String gists_url,
-            String starred_url,
-            String subscriptions_url,
-            String organizations_url,
-            String repos_url,
-            String events_url,
-            String received_events_url,
+            String htmlUrl,
+            String followersUrl,
+            String gistsUrl,
+            String starredUrl,
+            String subscriptionsUrl,
+            String organizationsUrl,
+            String reposUrl,
+            String eventsUrl,
+            String receivedEventsUrl,
             String type,
-            boolean site_admin) {
+            boolean siteAdmin) {
         this.login = login;
         this.id = id;
-        this.node_id = node_id;
-        this.avatar_url = avatar_url;
-        this.gravatar_id = gravatar_id;
+        this.nodeId = nodeId;
+        this.avatarUrl = avatarUrl;
+        this.gravatarId = gravatarId;
         this.url = url;
-        this.html_url = html_url;
-        this.followers_url = followers_url;
-        this.gists_url = gists_url;
-        this.starred_url = starred_url;
-        this.subscriptions_url = subscriptions_url;
-        this.organizations_url = organizations_url;
-        this.repos_url = repos_url;
-        this.events_url = events_url;
-        this.received_events_url = received_events_url;
+        this.htmlUrl = htmlUrl;
+        this.followersUrl = followersUrl;
+        this.gistsUrl = gistsUrl;
+        this.starredUrl = starredUrl;
+        this.subscriptionsUrl = subscriptionsUrl;
+        this.organizationsUrl = organizationsUrl;
+        this.reposUrl = reposUrl;
+        this.eventsUrl = eventsUrl;
+        this.receivedEventsUrl = receivedEventsUrl;
         this.type = type;
-        this.site_admin = site_admin;
+        this.siteAdmin = siteAdmin;
     }
 
-    public String login() {
+    public String getLogin() {
         return login;
     }
 
@@ -65,7 +65,7 @@ public class User {
         this.login = login;
     }
 
-    public int id() {
+    public int getId() {
         return id;
     }
 
@@ -73,31 +73,31 @@ public class User {
         this.id = id;
     }
 
-    public String node_id() {
-        return node_id;
+    public String getNodeId() {
+        return nodeId;
     }
 
-    public void setNode_id(String node_id) {
-        this.node_id = node_id;
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
     }
 
-    public String avatar_url() {
-        return avatar_url;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setAvatar_url(String avatar_url) {
-        this.avatar_url = avatar_url;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
-    public String gravatar_id() {
-        return gravatar_id;
+    public String getGravatarId() {
+        return gravatarId;
     }
 
-    public void setGravatar_id(String gravatar_id) {
-        this.gravatar_id = gravatar_id;
+    public void setGravatarId(String gravatarId) {
+        this.gravatarId = gravatarId;
     }
 
-    public String url() {
+    public String getUrl() {
         return url;
     }
 
@@ -105,79 +105,79 @@ public class User {
         this.url = url;
     }
 
-    public String html_url() {
-        return html_url;
+    public String getHtmlUrl() {
+        return htmlUrl;
     }
 
-    public void setHtml_url(String html_url) {
-        this.html_url = html_url;
+    public void setHtmlUrl(String htmlUrl) {
+        this.htmlUrl = htmlUrl;
     }
 
-    public String followers_url() {
-        return followers_url;
+    public String getFollowersUrl() {
+        return followersUrl;
     }
 
-    public void setFollowers_url(String followers_url) {
-        this.followers_url = followers_url;
+    public void setFollowersUrl(String followersUrl) {
+        this.followersUrl = followersUrl;
     }
 
-    public String gists_url() {
-        return gists_url;
+    public String getGistsUrl() {
+        return gistsUrl;
     }
 
-    public void setGists_url(String gists_url) {
-        this.gists_url = gists_url;
+    public void setGistsUrl(String gistsUrl) {
+        this.gistsUrl = gistsUrl;
     }
 
-    public String starred_url() {
-        return starred_url;
+    public String getStarredUrl() {
+        return starredUrl;
     }
 
-    public void setStarred_url(String starred_url) {
-        this.starred_url = starred_url;
+    public void setStarredUrl(String starredUrl) {
+        this.starredUrl = starredUrl;
     }
 
-    public String subscriptions_url() {
-        return subscriptions_url;
+    public String getSubscriptionsUrl() {
+        return subscriptionsUrl;
     }
 
-    public void setSubscriptions_url(String subscriptions_url) {
-        this.subscriptions_url = subscriptions_url;
+    public void setSubscriptionsUrl(String subscriptionsUrl) {
+        this.subscriptionsUrl = subscriptionsUrl;
     }
 
-    public String organizations_url() {
-        return organizations_url;
+    public String getOrganizationsUrl() {
+        return organizationsUrl;
     }
 
-    public void setOrganizations_url(String organizations_url) {
-        this.organizations_url = organizations_url;
+    public void setOrganizationsUrl(String organizationsUrl) {
+        this.organizationsUrl = organizationsUrl;
     }
 
-    public String repos_url() {
-        return repos_url;
+    public String getReposUrl() {
+        return reposUrl;
     }
 
-    public void setRepos_url(String repos_url) {
-        this.repos_url = repos_url;
+    public void setReposUrl(String reposUrl) {
+        this.reposUrl = reposUrl;
     }
 
-    public String events_url() {
-        return events_url;
+    public String getEventsUrl() {
+        return eventsUrl;
     }
 
-    public void setEvents_url(String events_url) {
-        this.events_url = events_url;
+    public void setEventsUrl(String eventsUrl) {
+        this.eventsUrl = eventsUrl;
     }
 
-    public String received_events_url() {
-        return received_events_url;
+    public String getReceivedEventsUrl() {
+        return receivedEventsUrl;
     }
 
-    public void setReceived_events_url(String received_events_url) {
-        this.received_events_url = received_events_url;
+    public void setReceivedEventsUrl(String receivedEventsUrl) {
+        this.receivedEventsUrl = receivedEventsUrl;
     }
 
-    public String type() {
+    public String getType() {
         return type;
     }
 
@@ -185,11 +185,11 @@ public class User {
         this.type = type;
     }
 
-    public boolean site_admin() {
-        return site_admin;
+    public boolean getSiteAdmin() {
+        return siteAdmin;
     }
 
-    public void setSite_admin(boolean site_admin) {
-        this.site_admin = site_admin;
+    public void setSiteAdmin(boolean siteAdmin) {
+        this.siteAdmin = siteAdmin;
     }
 }

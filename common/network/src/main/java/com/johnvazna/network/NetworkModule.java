@@ -2,6 +2,7 @@ package com.johnvazna.network;
 
 import android.content.Context;
 
+import com.johnvazna.network.conectivity.ConnectivityService;
 import com.johnvazna.network.interceptors.ConnectivityInterceptor;
 import com.johnvazna.network.interceptors.RetryInterceptor;
 
@@ -26,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @InstallIn(SingletonComponent.class)
 public class NetworkModule {
 
-    private static final String BASE_URL = "https://api.github.com/";
+    public static final String BASE_URL = "https://api.github.com/";
 
     @Provides
     @Singleton
@@ -60,8 +61,8 @@ public class NetworkModule {
     @Provides
     @Singleton
     public static ConnectivityInterceptor provideConnectivityInterceptor(
-            @ApplicationContext Context context) {
-        return new ConnectivityInterceptor(context);
+            ConnectivityService connectivityService) {
+        return new ConnectivityInterceptor(connectivityService);
     }
 
 

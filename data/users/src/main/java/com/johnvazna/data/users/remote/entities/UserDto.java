@@ -11,35 +11,35 @@ public class UserDto implements Serializable {
     @SerializedName("id")
     private int id;
     @SerializedName("node_id")
-    private String node_id;
+    private String nodeId;
     @SerializedName("avatar_url")
-    private String avatar_url;
+    private String avatarUrl;
     @SerializedName("gravatar_id")
-    private String gravatar_id;
+    private String gravatarId;
     @SerializedName("url")
     private String url;
     @SerializedName("html_url")
-    private String html_url;
+    private String htmlUrl;
     @SerializedName("followers_url")
-    private String followers_url;
+    private String followersUrl;
     @SerializedName("gists_url")
-    private String gists_url;
+    private String gistsUrl;
     @SerializedName("starred_url")
-    private String starred_url;
+    private String starredUrl;
     @SerializedName("subscriptions_url")
-    private String subscriptions_url;
+    private String subscriptionsUrl;
     @SerializedName("organizations_url")
-    private String organizations_url;
+    private String organizationsUrl;
     @SerializedName("repos_url")
-    private String repos_url;
+    private String reposUrl;
     @SerializedName("events_url")
     private String events_url;
     @SerializedName("received_events_url")
-    private String received_events_url;
+    private String receivedEventsUrl;
     @SerializedName("type")
     private String type;
     @SerializedName("site_admin")
-    private boolean site_admin;
+    private boolean siteAdmin;
 
     public String getLogin() {
         return login;
@@ -58,27 +58,27 @@ public class UserDto implements Serializable {
     }
 
     public String getNodeId() {
-        return node_id;
+        return nodeId;
     }
 
     public void setNodeId(String nodeId) {
-        this.node_id = nodeId;
+        this.nodeId = nodeId;
     }
 
     public String getAvatarUrl() {
-        return avatar_url;
+        return avatarUrl;
     }
 
     public void setAvatarUrl(String avatarUrl) {
-        this.avatar_url = avatarUrl;
+        this.avatarUrl = avatarUrl;
     }
 
     public String getGravatarId() {
-        return gravatar_id;
+        return gravatarId;
     }
 
     public void setGravatarId(String gravatarId) {
-        this.gravatar_id = gravatarId;
+        this.gravatarId = gravatarId;
     }
 
     public String getUrl() {
@@ -90,59 +90,59 @@ public class UserDto implements Serializable {
     }
 
     public String getHtmlUrl() {
-        return html_url;
+        return htmlUrl;
     }
 
     public void setHtmlUrl(String htmlUrl) {
-        this.html_url = htmlUrl;
+        this.htmlUrl = htmlUrl;
     }
 
     public String getFollowersUrl() {
-        return followers_url;
+        return followersUrl;
     }
 
     public void setFollowersUrl(String followersUrl) {
-        this.followers_url = followersUrl;
+        this.followersUrl = followersUrl;
     }
 
     public String getGistsUrl() {
-        return gists_url;
+        return gistsUrl;
     }
 
     public void setGistsUrl(String gistsUrl) {
-        this.gists_url = gistsUrl;
+        this.gistsUrl = gistsUrl;
     }
 
     public String getStarredUrl() {
-        return starred_url;
+        return starredUrl;
     }
 
     public void setStarredUrl(String starredUrl) {
-        this.starred_url = starredUrl;
+        this.starredUrl = starredUrl;
     }
 
     public String getSubscriptionsUrl() {
-        return subscriptions_url;
+        return subscriptionsUrl;
     }
 
     public void setSubscriptionsUrl(String subscriptionsUrl) {
-        this.subscriptions_url = subscriptionsUrl;
+        this.subscriptionsUrl = subscriptionsUrl;
     }
 
     public String getOrganizationsUrl() {
-        return organizations_url;
+        return organizationsUrl;
     }
 
     public void setOrganizationsUrl(String organizationsUrl) {
-        this.organizations_url = organizationsUrl;
+        this.organizationsUrl = organizationsUrl;
     }
 
     public String getReposUrl() {
-        return repos_url;
+        return reposUrl;
     }
 
     public void setReposUrl(String reposUrl) {
-        this.repos_url = reposUrl;
+        this.reposUrl = reposUrl;
     }
 
     public String getEventsUrl() {
@@ -154,11 +154,11 @@ public class UserDto implements Serializable {
     }
 
     public String getReceivedEventsUrl() {
-        return received_events_url;
+        return receivedEventsUrl;
     }
 
     public void setReceivedEventsUrl(String receivedEventsUrl) {
-        this.received_events_url = receivedEventsUrl;
+        this.receivedEventsUrl = receivedEventsUrl;
     }
 
     public String getType() {
@@ -170,10 +170,10 @@ public class UserDto implements Serializable {
     }
 
     public boolean getSiteAdmin() {
-        return site_admin;
+        return siteAdmin;
     }
 
     public void setSiteAdmin(boolean siteAdmin) {
-        this.site_admin = siteAdmin;
+        this.siteAdmin = siteAdmin;
     }
 }
