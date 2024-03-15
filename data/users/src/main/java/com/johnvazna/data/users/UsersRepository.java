@@ -5,6 +5,7 @@ import com.johnvazna.data.users.remote.UsersRemoteDataSource;
 import com.johnvazna.data.users.remote.entities.UserDto;
 import com.johnvazna.domain.users.UsersDataSource;
 import com.johnvazna.domain.users.entities.User;
+import com.johnvazna.domain.users.entities.UserDetail;
 import com.johnvazna.network.utils.Result;
 
 import java.util.ArrayList;
@@ -33,6 +34,19 @@ public class UsersRepository implements UsersDataSource {
                             userList.add(UserMapper.fromDto(dto));
                         }
                         return Result.success(userList);
+                    } else {
+                        return Result.error(result.getError());
+                    }
+                });
+    }
+
+    @Override
+    public Single<Result<UserDetail>> getUserByUsername(String name) {
+        return usersRemoteDataSource.getUserByUsername(name)
+                .map(result -> {
+                    if (result.isSuccess()) {
+                        UserDetail userDetail = UserMapper.fromDetailDto(result.getData());
+                        return Result.success(userDetail);
                     } else {
                         return Result.error(result.getError());
                     }
