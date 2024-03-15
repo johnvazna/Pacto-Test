@@ -6,30 +6,25 @@ plugins {
 apply from: '../../config.gradle'
 
 android {
-    namespace 'com.johnvazna.data.users'
+    namespace 'com.johnvazna.local'
     applyCommonBuildTypes(android)
     applyAndroidCommonConfig(android, true)
 }
 
 dependencies {
-    implementation project(":core")
-    implementation project(":domain:users")
-    implementation project(":common:local")
-    implementation project(":common:network")
+
+    // Room dependencies
+    implementation "androidx.room:room-runtime:2.6.1"
+    annotationProcessor "androidx.room:room-compiler:2.6.1"
 
     //noinspection GradleDependency
     implementation "com.google.dagger:hilt-android:2.44"
     //noinspection GradleDependency
     annotationProcessor "com.google.dagger:hilt-compiler:2.44"
-    //noinspection GradleDependency
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
     //RxJava
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+    implementation 'androidx.room:room-rxjava3:2.6.1'
 
-    //Test
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.2.0'
-    testImplementation 'org.mockito:mockito-inline:5.0.0'
 }

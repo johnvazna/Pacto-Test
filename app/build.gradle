@@ -38,6 +38,7 @@ dependencies {
     implementation project(":core")
     implementation project(":data:users")
     implementation project(":domain:users")
+    implementation project(":common:local")
     implementation project(":common:network")
 
     //noinspection GradleDependency
