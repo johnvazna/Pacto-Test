@@ -6,4 +6,8 @@
 
     <string name="empty_list_connection">You still don\'t have enough accounts, have you checked your internet connection?</string>
 
+    <!-- User Detail -->
+
+    <string name="btn_github_profile">Github profile</string>
+
 </resources>
