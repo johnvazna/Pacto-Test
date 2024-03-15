@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.johnvazna.data.users.remote.UsersRemoteDataSource;
-import com.johnvazna.data.users.remote.entities.UserDto;
+import com.johnvazna.domain.users.entities.User;
+import com.johnvazna.domain.users.usecases.GetUsersUseCase;
 import com.johnvazna.network.utils.Result;
 
 import java.util.List;
@@ -20,21 +20,21 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 @HiltViewModel
 public class MainViewModel extends ViewModel {
 
-    private final UsersRemoteDataSource usersRemoteDataSource;
-    private final MutableLiveData<Result<List<UserDto>>> usersLiveData = new MutableLiveData<>();
+    private final GetUsersUseCase getUsersUseCase;
+    private final MutableLiveData<Result<List<User>>> usersLiveData = new MutableLiveData<>();
     private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Inject
-    public MainViewModel(UsersRemoteDataSource usersRemoteDataSource) {
-        this.usersRemoteDataSource = usersRemoteDataSource;
+    public MainViewModel(GetUsersUseCase getUsersUseCase) {
+        this.getUsersUseCase = getUsersUseCase;
     }
 
-    public LiveData<Result<List<UserDto>>> getUsersLiveData() {
+    public LiveData<Result<List<User>>> getUsersLiveData() {
         return usersLiveData;
     }
 
     public void fetchUsers() {
-        disposables.add(usersRemoteDataSource.getUsers()
+        disposables.add(getUsersUseCase.execute()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(usersLiveData::setValue, throwable ->
