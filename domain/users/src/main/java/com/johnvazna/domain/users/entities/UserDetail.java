@@ -1,6 +1,8 @@
 package com.johnvazna.domain.users.entities;
 
-public class UserDetail extends User {
+import java.io.Serializable;
+
+public class UserDetail extends User implements Serializable {
     private String name;
     private String company;
     private String blog;
