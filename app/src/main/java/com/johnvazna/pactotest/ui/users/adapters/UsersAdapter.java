@@ -20,6 +20,8 @@ import io.reactivex.rxjava3.functions.Consumer;
 public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private List<User> users = new ArrayList<>();
+    private List<User> usersFull;
+
     private final Consumer<User> onUserClicked;
 
     public UsersAdapter(Consumer<User> onUserClicked) {
@@ -46,6 +48,23 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @SuppressLint("NotifyDataSetChanged")
     public void setUsers(List<User> users) {
         this.users = users;
+        this.usersFull = new ArrayList<>(users);
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void filter(String text) {
+        users.clear();
+        if (text.isEmpty()) {
+            users.addAll(usersFull);
+        } else {
+            text = text.toLowerCase();
+            for (User user : usersFull) {
+                if (user.getLogin().toLowerCase().contains(text)) {
+                    users.add(user);
+                }
+            }
+        }
         notifyDataSetChanged();
     }
 }
