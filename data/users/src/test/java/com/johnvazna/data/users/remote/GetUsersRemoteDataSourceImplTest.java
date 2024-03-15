@@ -102,7 +102,7 @@ public class GetUsersRemoteDataSourceImplTest {
         observer.assertComplete()
                 .assertNoErrors()
                 .assertValue(result -> result.getError() != null)
-                .assertValue(result -> result.getError().getMessage().contains("GENERIC"));
+                .assertValue(result -> Objects.requireNonNull(result.getError().getMessage()).contains("GENERIC"));
     }
 
     @Test
