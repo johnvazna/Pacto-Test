@@ -22,7 +22,7 @@ import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 import retrofit2.Response;
 
-public class GetUsersRemoteDataSourceImplTest {
+public class GetUsersTest {
 
     @Mock
     private UsersService mockUsersService;
