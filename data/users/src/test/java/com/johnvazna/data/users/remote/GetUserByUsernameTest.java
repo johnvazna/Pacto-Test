@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 import retrofit2.Response;
 
-public class GetUserRemoteDataSourceImplTest {
+public class GetUserByUsernameTest {
 
     @Mock
     private UsersService mockUsersService;
