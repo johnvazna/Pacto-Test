@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,7 +29,7 @@ public class UserFragment extends BaseFragment<UserViewModel> {
 
     private SearchView searchView;
 
-    private LinearLayout emptyView;
+    private LinearLayoutCompat emptyView;
 
     private UsersAdapter usersAdapter;
 
